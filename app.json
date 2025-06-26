@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "BGH_F",
-    "slug": "BGH_F",
+    "name": "BGH",
+    "slug": "bgh_frontend",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

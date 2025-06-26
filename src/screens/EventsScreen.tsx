@@ -3,12 +3,12 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ScreenHeader from '../components/ScreenHeader';
 
-export default function MyCollectionScreen() {
+export default function EventsScreen() {
   return (
     <View style={styles.container}>
-      <ScreenHeader title="My Collection" />
+      <ScreenHeader title="Events" />
       <View style={styles.content}>
-        <Text style={styles.placeholderText}>My Collection Content</Text>
+        <Text style={styles.placeholderText}>Events Content</Text>
       </View>
     </View>
   );

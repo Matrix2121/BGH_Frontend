@@ -3,12 +3,12 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ScreenHeader from '../components/ScreenHeader';
 
-export default function LibraryScreen() {
+export default function GroupsScreen() {
   return (
     <View style={styles.container}>
-      <ScreenHeader title="Library" />
+      <ScreenHeader title="Groups" />
       <View style={styles.content}>
-        <Text style={styles.placeholderText}>Library Content</Text>
+        <Text style={styles.placeholderText}>Groups Content</Text>
       </View>
     </View>
   );

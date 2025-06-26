@@ -3,12 +3,12 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ScreenHeader from '../components/ScreenHeader';
 
-export default function LibraryScreen() {
+export default function WishlistScreen() {
   return (
     <View style={styles.container}>
-      <ScreenHeader title="Library" />
+      <ScreenHeader title="Wishlist" />
       <View style={styles.content}>
-        <Text style={styles.placeholderText}>Library Content</Text>
+        <Text style={styles.placeholderText}>Wish List Content</Text>
       </View>
     </View>
   );

@@ -3,12 +3,12 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ScreenHeader from '../components/ScreenHeader';
 
-export default function MyCollectionScreen() {
+export default function ProfileScreen() {
   return (
     <View style={styles.container}>
-      <ScreenHeader title="My Collection" />
+      <ScreenHeader title="Profile" />
       <View style={styles.content}>
-        <Text style={styles.placeholderText}>My Collection Content</Text>
+        <Text style={styles.placeholderText}>Profile Content</Text>
       </View>
     </View>
   );
