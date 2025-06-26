@@ -1,7 +1,9 @@
 import React from 'react';
 import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
-// import { ChevronLeft } from 'lucide-react-native';
+import { ChevronLeft } from 'lucide-react-native';
+
+import theme from '../theme/theme';
 
 export interface ScreenHeaderProps {
   /** Title text to display in the header */
@@ -32,7 +34,7 @@ export default function ScreenHeader({
             onPress={handleBack}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           >
-            {/* <ChevronLeft size={24} /> */}
+            <ChevronLeft size={24} />
           </TouchableOpacity>
         )}
         <Text style={styles.title}>{title}</Text>
@@ -57,9 +59,10 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   title: {
+    ...theme.typography.pageTitle,
     fontSize: 20,
     fontWeight: 'bold',
     flex: 1,
-    color: '#000',
+    color: '#000'
   },
 });
