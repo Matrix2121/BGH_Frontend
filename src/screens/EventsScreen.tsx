@@ -1,7 +1,7 @@
 // src/screens/LibraryScreen.tsx
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import ScreenHeader from '../components/ScreenHeader';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import ScreenHeader from "../components/Header";
 
 export default function EventsScreen() {
   return (
@@ -17,15 +17,15 @@ export default function EventsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
   },
   content: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   placeholderText: {
     fontSize: 16,
-    color: '#333333',
+    color: "#333333",
   },
 });

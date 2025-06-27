@@ -1,7 +1,11 @@
 export const spacings = {
+  header: {
+    paddingHorizontal: 16,
+    paddingVertical: 12
+  },
   interface: {
     marginHorizontal: 16,
-    paddingTop: 12,
+    marginTop: 12,
     gapTitleToContent: 16,
   },
   section: {
