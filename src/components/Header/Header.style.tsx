@@ -1,13 +1,13 @@
 import {  StyleSheet } from 'react-native';
-import theme from '../theme/theme';
+import theme from '../../theme/theme';
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.background.app,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: theme.spacings.header.paddingHorizontal,
-    paddingVertical: theme.spacings.header.paddingVertical
+    paddingVertical: theme.spacings.header.paddingVertical,
+    marginHorizontal: theme.spacings.interface.safeAreaHorizontal
   },
   backButton: {
     marginRight: 8,

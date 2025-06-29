@@ -9,11 +9,12 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end",
+    bottom: 40
   },
   placeholderText: {
-    fontSize: 16,
-    color: "#333333",
+    fontSize: 84,
+    color: "#fff",
   },
 });
 

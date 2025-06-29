@@ -1,7 +1,7 @@
 // src/screens/LibraryScreen.tsx
 import React from "react";
 import { View, Text } from "react-native";
-import ScreenHeader from "../../components/Header";
+import ScreenHeader from "../../components/Header/Header";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from "./LibraryScreen.style";
 

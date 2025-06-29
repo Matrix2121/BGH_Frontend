@@ -1,7 +1,7 @@
 // src/screens/LibraryScreen.tsx
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import ScreenHeader from "../components/Header";
+import ScreenHeader from "../components/Header/Header";
 
 export default function HomeScreen() {
   return (
@@ -17,15 +17,16 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: 'ffffff',
   },
   content: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end",
+    bottom: 30
   },
   placeholderText: {
-    fontSize: 16,
-    color: "#333333",
+    fontSize: 84,
+    color: "#000000",
   },
 });

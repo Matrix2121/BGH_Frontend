@@ -4,12 +4,13 @@ import AppNavigator from './src/navigation/AppNavigator';
 import FontProvider from './src/context/FontProvider';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
+import '@expo/metro-runtime';
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#0B132B' }} edges={['top', 'left', 'right', 'bottom']}>
-        <StatusBar barStyle={'light-content'}/>
+      <StatusBar barStyle={'light-content'}/>
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#0B132B'}} edges={['top', 'left', 'right', 'bottom']}>
         <FontProvider>
           <NavigationContainer>
             <AppNavigator />

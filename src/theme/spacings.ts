@@ -1,10 +1,12 @@
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
 export const spacings = {
   header: {
     paddingHorizontal: 16,
     paddingVertical: 12
   },
   interface: {
-    marginHorizontal: 16,
+    safeAreaHorizontal: 8,
     marginTop: 12,
     gapTitleToContent: 16,
   },
@@ -22,11 +24,15 @@ export const spacings = {
   },
   bottomNav: {
     height: 72,
-    safeAreaBottom: 24,
-    chevron: {
+    cornerRadius: 24,
+    safeAreaBottom: 16,
+    chevronContainer: {
       width: 24,
-      height: 16,
-      paddingBottom: 12,
+      height: 16
     },
-  },
+    chevronIcon: {
+      size: 20,
+    },
+    iconSize: 28,
+  }
 };

@@ -1,7 +1,7 @@
 // src/screens/LibraryScreen.tsx
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import ScreenHeader from "../components/Header";
+import ScreenHeader from "../components/Header/Header";
 
 export default function EventsScreen() {
   return (

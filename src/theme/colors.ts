@@ -14,5 +14,8 @@ export const colors = {
         secondary: "#D6FFF9",
         tertiray: "#5BC0BE",
         disabled: "#FFFFFF33"
+    },
+    navBar: {
+        background: "#1C2339CC"
     }
 }
