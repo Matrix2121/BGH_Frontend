@@ -61,12 +61,12 @@ export default StyleSheet.create({
   pill: {
     width: "100%",
     height: BAR_HEIGHT,
-    backgroundColor: theme.colors.navBar.background,
     overflow: "hidden",
     borderRadius: theme.spacings.bottomNav.cornerRadius,
   },
   blurPill: {
     width: "100%",
     height: "100%",
+    backgroundColor: theme.colors.navBar.background,
   },
 });

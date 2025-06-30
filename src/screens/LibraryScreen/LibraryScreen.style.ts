@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     bottom: 40
   },
+  collection: {
+
+  },
   placeholderText: {
     fontSize: 84,
     color: "#fff",

@@ -16,6 +16,6 @@ export const colors = {
         disabled: "#FFFFFF33"
     },
     navBar: {
-        background: "#1C2339CC"
+        background: "#1C233977"
     }
 }

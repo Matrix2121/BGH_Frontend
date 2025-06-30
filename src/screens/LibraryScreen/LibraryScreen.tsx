@@ -10,6 +10,11 @@ export default function LibraryScreen() {
       <View style={styles.container}>
         <ScreenHeader title="Library" showBack={true} />
         <View style={styles.content} >
+          <View style={styles.collection}>
+            
+
+          </View>
+
           <Text style={styles.placeholderText}>Library Content</Text>
         </View>
       </View>
