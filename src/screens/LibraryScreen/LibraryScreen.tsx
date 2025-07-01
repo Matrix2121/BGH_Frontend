@@ -1,22 +1,25 @@
 // src/screens/LibraryScreen.tsx
-import React from "react";
+import React, { useMemo } from "react";
 import { View, Text } from "react-native";
 import ScreenHeader from "../../components/Header/Header";
-import { SafeAreaView } from 'react-native-safe-area-context';
-import styles from "./LibraryScreen.style";
+import useStyles from "./LibraryScreen.style";
 
 export default function LibraryScreen() {
+  const styles = useStyles();
+  
   return (
-      <View style={styles.container}>
-        <ScreenHeader title="Library" showBack={true} />
-        <View style={styles.content} >
-          <View style={styles.collection}>
-            
-
+    <View style={styles.container}>
+      <ScreenHeader title="Library" showBack={true} />
+      <View style={styles.content}>
+        <View style={styles.card}>
+          <Text style={styles.title}>My Collection</Text>
+          <View style={styles.grid}>
+            <Text style={{ fontSize: 40 }}>ggggggefd</Text>
           </View>
-
-          <Text style={styles.placeholderText}>Library Content</Text>
         </View>
+
+        {/* <Text style={styles.placeholderText}>Library Content</Text> */}
       </View>
+    </View>
   );
 }

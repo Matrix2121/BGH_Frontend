@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Platform } from "react-native";
 import MaskedView from "@react-native-masked-view/masked-view";
-import BlurView from "../../BlurView";
-import Handle from "../../icons/Handle";
-import styles from "./NavigationBarMask.styles";
+import BlurView from "../../../components/BlurView";
+import Handle from "../../../../assets/icons/Handle";
+import useStyles from "./NavigationBarMask.styles";
 
 export default function NavigationBarMask() {
+  const styles = useStyles();
   return (
     <View style={styles.container}>
       {/* <MaskedView

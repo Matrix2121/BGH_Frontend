@@ -3,10 +3,12 @@ import React from "react";
 import { View, Pressable, Text } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import NavigationBarMask from "./mask/NavigationBarMask";
-import theme from "../../theme/theme";
-import styles from "./NavigationBar.styles";
+import { useTheme } from "../../context/ThemeContext";
+import useStyles from "./NavigationBar.styles";
 
 export default function NavigationBar(props: BottomTabBarProps) {
+  const theme = useTheme();
+  const styles = useStyles();
   const { state, descriptors, navigation } = props;
 
   return (
@@ -16,12 +18,6 @@ export default function NavigationBar(props: BottomTabBarProps) {
       <View style={styles.tabButtonsContainer}>
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key];
-          //   const label =
-          //     options.tabBarLabel !== undefined
-          //       ? options.tabBarLabel
-          //       : options.title !== undefined
-          //       ? options.title
-          //       : route.name;
 
           const isFocused = state.index === index;
 
@@ -47,7 +43,7 @@ export default function NavigationBar(props: BottomTabBarProps) {
                 {options.tabBarIcon({
                   focused: isFocused,
                   color: baseColor,
-                  size: theme.spacings.bottomNav.iconSize,
+                  size: theme.spacings.tiles.bottomNavigation,
                 })}
               </View>
             ) : null;

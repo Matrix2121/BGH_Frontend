@@ -7,18 +7,20 @@ import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
 import { Book, Calendar, Home, Users, User } from "lucide-react-native";
-import theme from "../theme/theme";
+import { useTheme } from "../context/ThemeContext";
 import { View } from "react-native";
-import NavigationBar from "../components/NavigationBar/NavigationBar";
+import NavigationBar from "./NavigationBar/NavigationBar";
 
 const Tab = createBottomTabNavigator();
 
 export default function AppNavigator() {
+  const theme = useTheme();
+
   return (
     <View
       style={{
         flex: 1,
-        marginHorizontal: theme.spacings.interface.safeAreaHorizontal,
+        marginHorizontal: theme.spacings.safeArea.horizontal,
       }}
     >
       <Tab.Navigator

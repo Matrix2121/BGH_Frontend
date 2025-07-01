@@ -1,26 +1,28 @@
-import {  StyleSheet } from 'react-native';
-import theme from '../../theme/theme';
+import { StyleSheet } from "react-native";
+import { useTheme } from "../../context/ThemeContext";
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: theme.colors.background.app,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: theme.spacings.header.paddingVertical,
-    marginHorizontal: theme.spacings.interface.safeAreaHorizontal
-  },
-  backButton: {
-    marginRight: 8,
-  },
-  title: {
-    ...theme.typography.pageTitle,
-    fontSize: 20,
-    flex: 1,
-    color: theme.colors.text.primary
-  },
-  chevron: {
-    color: theme.colors.accent.primary
-  }
-});
-
-export default styles;
+export default function useStyles() {
+  const theme = useTheme();
+  
+  return StyleSheet.create({
+    container: {
+      backgroundColor: theme.colors.background.app,
+      flexDirection: "row",
+      alignItems: "center",
+      paddingVertical: theme.spacings.paddings.header.vertical,
+      marginHorizontal: theme.spacings.paddings.header.horizontal,
+    },
+    backButton: {
+      marginRight: 8,
+    },
+    title: {
+      ...theme.typography.pageTitle,
+      fontSize: 24,
+      flex: 1,
+      color: theme.colors.text.primary,
+    },
+    chevron: {
+      color: theme.colors.accent.primary,
+    },
+  })
+};
