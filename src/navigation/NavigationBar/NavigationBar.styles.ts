@@ -7,10 +7,11 @@ export default function useStyles() {
     container: {
       position: "absolute",
       height: theme.spacings.bottomNavigation.height,
-      width: theme.spacings.screen.width - theme.spacings.safeArea.horizontal * 2,
+      width: theme.spacings.screen.width - theme.spacings.margins.global.horizontal * 2,
       bottom: 0,
       justifyContent: 'center',
-      borderRadius: theme.spacings.borderRadius.bottomNavigation
+      borderRadius: theme.spacings.borderRadius.bottomNavigation,
+      marginHorizontal: theme.spacings.margins.global.horizontal,
     },
     tabButtonsContainer: {
       height: theme.spacings.bottomNavigation.height,

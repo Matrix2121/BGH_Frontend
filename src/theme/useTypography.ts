@@ -1,23 +1,26 @@
-// src/theme/useTypography.ts
 import { useMemo } from "react";
 
 export const typography = {
-  pageTitle: { 
+  pageTitle: 
+  { 
     fontFamily: "Poppins-Bold", 
     fontSize: 24, 
     lineHeight: 28.8 
   },
-  sectionTitle: { 
+  sectionTitle: 
+  { 
     fontFamily: "Poppins-Regular", 
     fontSize: 18, 
     lineHeight: 23.4 
   },
-  groupLabel: { 
+  groupLabel: 
+  { 
     fontFamily: "Inter-Medium", 
     fontSize: 14, 
     lineHeight: 16.8 
   },
-  gameTileLabel: { 
+  gameTileLabel: 
+  { 
     fontFamily: "Inter-Medium", 
     fontSize: 10, 
     lineHeight: 13 

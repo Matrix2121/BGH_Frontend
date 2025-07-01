@@ -13,7 +13,7 @@ export default function useStyles() {
       flexDirection: 'column',
       alignItems: "center",
       position: "absolute",
-      width: theme.spacings.screen.width - theme.spacings.safeArea.horizontal * 2,
+      width: theme.spacings.screen.width - theme.spacings.margins.global.horizontal * 2,
       height: theme.spacings.bottomNavigation.height,
       bottom: 0,
       // overflow:   "hidden",

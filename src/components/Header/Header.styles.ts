@@ -10,7 +10,8 @@ export default function useStyles() {
       flexDirection: "row",
       alignItems: "center",
       paddingVertical: theme.spacings.paddings.header.vertical,
-      marginHorizontal: theme.spacings.paddings.header.horizontal,
+      paddingHorizontal: theme.spacings.paddings.header.horizontal,
+      marginHorizontal: theme.spacings.margins.global.horizontal,
     },
     backButton: {
       marginRight: 8,

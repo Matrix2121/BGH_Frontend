@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
-import useStyles from "./Header.style";
+import useStyles from "./Header.styles";
 
 export interface ScreenHeaderProps {
   title: string;

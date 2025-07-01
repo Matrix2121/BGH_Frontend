@@ -1,5 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { SafeAreaView } from "react-native-safe-area-context";
 import LibraryStack from "./LibraryStack";
 import GroupsScreen from "../screens/GroupsScreen";
 import EventsScreen from "../screens/EventsScreen";
@@ -7,21 +8,14 @@ import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
 import { Book, Calendar, Home, Users, User } from "lucide-react-native";
-import { useTheme } from "../context/ThemeContext";
-import { View } from "react-native";
 import NavigationBar from "./NavigationBar/NavigationBar";
-
 const Tab = createBottomTabNavigator();
 
 export default function AppNavigator() {
-  const theme = useTheme();
-
   return (
-    <View
-      style={{
-        flex: 1,
-        marginHorizontal: theme.spacings.safeArea.horizontal,
-      }}
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: "#0B132B" }}
+      edges={["top", "left", "right", "bottom"]}
     >
       <Tab.Navigator
         screenOptions={{
@@ -70,6 +64,6 @@ export default function AppNavigator() {
           }}
         />
       </Tab.Navigator>
-    </View>
+    </SafeAreaView>
   );
 }

@@ -5,24 +5,13 @@ export default function useStyles() {
   const theme = useTheme();
 
   return StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: theme.colors.background.app,
-    },
-    content: {
-      flex: 1,
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "flex-start",
-      gap: 24,
-    },
     card: {
+      flex: 1,
       borderRadius: theme.spacings.borderRadius.section,
-      gap: theme.spacings.gaps.sectionToSection,
+      gap: theme.spacings.margins.section.titleToContent,
       backgroundColor: theme.colors.background.card,
-      height: 260,
-      width: "100%",
       padding: theme.spacings.paddings.section.contentToBorder,
+      height: '100%'
     },
     title: {
       ...theme.typography.sectionTitle,
@@ -30,13 +19,9 @@ export default function useStyles() {
       fontSize: 20,
     },
     grid: {
-      height: 30,
+      height: 60,
       backgroundColor: "red",
       width: "100%",
     },
-    placeholderText: {
-      fontSize: 84,
-      color: "#fff",
-    },
-  });
-}
+  })
+};

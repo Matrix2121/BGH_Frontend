@@ -1,47 +1,62 @@
-// src/theme/useSpacings.ts
 import { useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useMemo } from "react";
 
 export interface Spacings {
-  screen: { 
+  screen: 
+  { 
     width: number; 
     height: number 
   };
-  safeArea: { 
+  safeArea: 
+  { 
     top: number; 
-    bottom: number; 
-    horizontal: number 
+    bottom: number;
+    left: number;
+    right: number;
   };
-  bottomNavigation: { 
-    height: number; 
-    totalHeight: number 
+  bottomNavigation: 
+  { 
+    height: number
   };
-  paddings: {
-    header: { 
+  paddings: 
+  {
+    header: 
+    { 
       vertical: number; 
       horizontal: number 
     };
-    section: { 
+    section: 
+    { 
       contentToBorder: number 
     };
   };
-  margins: { 
-    section: { 
+  margins: 
+  { 
+    global: 
+    {
+      horizontal: number
+    },
+    section: 
+    { 
       titleToContent: number 
     } 
   };
-  gaps: { 
+  gaps: 
+  { 
     sectionToSection: number; 
     gameTileToGameTile: number 
   };
-  borderRadius: {
+  borderRadius: 
+  {
     section: number;
     gameTiles: number;
     bottomNavigation: number;
   };
-  tiles: {
-    games: { 
+  tiles: 
+  {
+    games: 
+    { 
       width: number; 
       height: number 
     };
@@ -55,45 +70,66 @@ export function useSpacings(): Spacings {
 
   return useMemo<Spacings>(
     () => ({
-      // 1️⃣ screen dims
-      screen: { width, height },
+      screen: 
+      { 
+        width, 
+        height 
+      },
 
-      // 2️⃣ safe-area insets
-      safeArea: {
+      safeArea: 
+      {
         top: insets.top,
         bottom: insets.bottom,
-        horizontal: 8,
+        left: insets.left,
+        right: insets.right,
       },
 
-      // 3️⃣ nav bar height + bottom inset
-      bottomNavigation: {
+      bottomNavigation: 
+      {
         height: 72,
-        totalHeight: 72 + insets.bottom,
       },
 
-      // 4️⃣ your original static paddings
-      paddings: {
-        header: { vertical: 12, horizontal: 8 },
-        section: { contentToBorder: 16 },
+      paddings: 
+      {
+        header: 
+        { 
+          vertical: 12, 
+          horizontal: 8 
+        },
+        section: 
+          {
+           contentToBorder: 16 
+          },
       },
 
-      // 5️⃣ static margins between sections
-      margins: { section: { titleToContent: 12 } },
+      margins: 
+      {
+        global: 
+        {
+          horizontal: 8,
+        },
+        section: 
+        { 
+          titleToContent: 12 
+        } 
+      },
 
-      // 6️⃣ static gaps
-      gaps: { sectionToSection: 24, gameTileToGameTile: 8 },
+      gaps: 
+      { 
+        sectionToSection: 24, 
+        gameTileToGameTile: 8 
+      },
 
-      // 7️⃣ border radii
-      borderRadius: {
+      borderRadius: 
+      {
         section: 12,
         gameTiles: 12,
         bottomNavigation: 24,
       },
 
-      // 8️⃣ tile sizes: dynamic for games (e.g. 20% of width), static for nav
       tiles: {
-        games: {
-          // example: make game tiles ~25% of screen width
+        games: 
+        {
           width: width * 0.25,
           height: width * 0.25 * (92 / 78), 
         },

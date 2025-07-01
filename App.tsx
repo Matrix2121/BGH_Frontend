@@ -6,20 +6,21 @@ import { ThemeProvider } from "./src/context/ThemeContext";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "react-native";
 import "@expo/metro-runtime";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={"light-content"} />
-      <SafeAreaView style={{ flex: 1, backgroundColor: "#0B132B" }} edges={["top", "left", "right", "bottom"]}>
-        <ThemeProvider>
-          <FontProvider>
-            <NavigationContainer>
-              <AppNavigator />
-            </NavigationContainer>
-          </FontProvider>
-        </ThemeProvider>
-      </SafeAreaView>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <ThemeProvider>
+            <FontProvider>
+              <NavigationContainer>
+                <AppNavigator />
+              </NavigationContainer>
+            </FontProvider>
+          </ThemeProvider>
+        </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 }
