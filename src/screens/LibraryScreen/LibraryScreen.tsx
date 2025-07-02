@@ -11,13 +11,15 @@ export default function LibraryScreen() {
   return (
     <View style={styles.container}>
       <ScreenHeader title="Library" showBack={true} />
-      <ScrollView 
+      <ScrollView
+        style={{ flex: 1 }}
         contentContainerStyle={styles.content}
-        showsVerticalScrollIndicator={false}>
-        <Section height={256} title={"My Collection"}/>
-        <Section height={136} title={"Wishlist"}/>
-        <Section height={196} title={"Groups"}/>
-      </ScrollView> 
+        showsVerticalScrollIndicator={false}
+      >
+        <Section height={256} title={"My Collection"} />
+        <Section height={136} title={"Wishlist"} />
+        <Section height={196} title={"Groups"} />
+      </ScrollView>
     </View>
   );
 }

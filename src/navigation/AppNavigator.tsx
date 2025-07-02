@@ -15,7 +15,7 @@ export default function AppNavigator() {
   return (
     <SafeAreaView
       style={{ flex: 1, backgroundColor: "#0B132B" }}
-      edges={["top", "left", "right", "bottom"]}
+      edges={["top", "left", "right"]}
     >
       <Tab.Navigator
         screenOptions={{

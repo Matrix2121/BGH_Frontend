@@ -11,12 +11,12 @@ export default function useStyles() {
     },
     content: {
       flexDirection: "column",
-      alignItems: "center",
+      alignItems: "stretch",
       justifyContent: "flex-start",
-      gap: theme.spacings.gaps.sectionToSection,
-      paddingBottom: theme.spacings.bottomNavigation.height + 8,
+      paddingBottom: theme.spacings.bottomNavigation.height + theme.spacings.safeArea.bottom + 24,
       marginHorizontal: theme.spacings.margins.global.horizontal,
-      marginVertical: theme.spacings.margins.section.titleToContent,
+      marginTop: theme.spacings.margins.section.titleToContent,
+      gap: theme.spacings.gaps.sectionToSection,
     },
   });
 }

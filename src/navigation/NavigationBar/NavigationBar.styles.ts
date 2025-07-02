@@ -12,6 +12,7 @@ export default function useStyles() {
       justifyContent: 'center',
       borderRadius: theme.spacings.borderRadius.bottomNavigation,
       marginHorizontal: theme.spacings.margins.global.horizontal,
+      marginBottom: theme.spacings.safeArea.bottom,
     },
     tabButtonsContainer: {
       height: theme.spacings.bottomNavigation.height,

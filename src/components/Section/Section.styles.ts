@@ -6,22 +6,26 @@ export default function useStyles() {
 
   return StyleSheet.create({
     card: {
-      flex: 1,
       borderRadius: theme.spacings.borderRadius.section,
-      gap: theme.spacings.margins.section.titleToContent,
-      backgroundColor: theme.colors.background.card,
-      padding: theme.spacings.paddings.section.contentToBorder,
-      height: '100%'
+      // backgroundColor: theme.colors.background.card,
+      backgroundColor: 'red',
+      padding: theme.spacings.paddings.section.contentToBorder ,
+      
+      overflow: 'hidden',
+      
     },
     title: {
       ...theme.typography.sectionTitle,
       color: theme.colors.text.secondary,
       fontSize: 20,
+      marginBottom: theme.spacings.margins.section.titleToContent
     },
     grid: {
-      height: 60,
-      backgroundColor: "red",
-      width: "100%",
+      flex: 1,
+      width: '100%',
+      // height: '100%',
+      overflow: 'hidden',
+      backgroundColor: "grey",
     },
   })
 };
