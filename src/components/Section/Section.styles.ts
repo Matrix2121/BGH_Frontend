@@ -5,14 +5,11 @@ export default function useStyles() {
   const theme = useTheme();
 
   return StyleSheet.create({
-    card: {
+    innerContainer: {
       borderRadius: theme.spacings.borderRadius.section,
-      // backgroundColor: theme.colors.background.card,
-      backgroundColor: 'red',
+      backgroundColor: theme.colors.background.card,
       padding: theme.spacings.paddings.section.contentToBorder ,
-      
       overflow: 'hidden',
-      
     },
     title: {
       ...theme.typography.sectionTitle,
@@ -23,9 +20,6 @@ export default function useStyles() {
     grid: {
       flex: 1,
       width: '100%',
-      // height: '100%',
-      overflow: 'hidden',
-      backgroundColor: "grey",
     },
   })
 };

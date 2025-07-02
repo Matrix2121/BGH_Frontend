@@ -17,12 +17,12 @@ export default function Section({
   const styles = useStyles();
 
   return (
-    <View style={{ height: height, width: width}}>
+    <View style={{ height: height, width: width }}>
       <Shadow distance={12} startColor={"#00FFE933"} stretch={true}>
-        <View style={[styles.card, { height: height, width: '100%' }]}>
+        <View style={[styles.innerContainer, { height: height, width: "100%" }]}>
           <Text style={styles.title}>{title}</Text>
           <View style={styles.grid}>
-            <Text style={{ fontSize: 40 }} >Lorem Ipftvgybhunjmk,l;jnhgbfvdcsxfvghbjnkml,;jmhngbfvdcygbhujnkml,kujmnhbgtfyghunjimko,ljmhngbvfjghnfbdkjhmnbgfvdcnzsrsxdrcftgvbhjnkmldtd</Text>
+
           </View>
         </View>
       </Shadow>
