@@ -5,14 +5,14 @@ import { Shadow } from "react-native-shadow-2";
 import { ScrollView } from "react-native-gesture-handler";
 
 export interface SectionWrapperProps {
-  height: number;
+  // height?: any;
   width?: any;
   title: string;
   children?: React.ReactNode;
 }
 
 export default function SectionWrapper({
-  height,
+  // height = 'auto',
   width = "100%",
   title,
   children,
@@ -20,13 +20,11 @@ export default function SectionWrapper({
   const styles = useStyles();
 
   return (
-    <View style={{ height: height, width: width }}>
+    <View style={{ width: width }}>
       <Shadow distance={12} startColor={"#00FFE933"} stretch={true}>
-        <View style={[styles.innerContainer, { height: height, width: "100%" }]} >
+        <View style={[styles.innerContainer, { width: "100%" }]}>
           <Text style={styles.title}>{title}</Text>
-          <ScrollView style={styles.grid} horizontal={true} showsHorizontalScrollIndicator={false}>
-            {children}
-          </ScrollView>
+          {children}
         </View>
       </Shadow>
     </View>

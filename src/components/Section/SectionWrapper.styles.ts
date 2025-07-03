@@ -17,12 +17,5 @@ export default function useStyles() {
       fontSize: 20,
       marginBottom: theme.spacings.margins.section.titleToContent
     },
-    grid: {
-      flex: 1,
-      width: '100%',
-      overflow: 'hidden',
-      flexWrap: 'wrap',
-      
-    },
   })
 };

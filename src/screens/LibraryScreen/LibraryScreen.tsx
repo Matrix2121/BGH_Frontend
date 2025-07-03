@@ -1,9 +1,10 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text, Image } from "react-native";
 import ScreenHeader from "../../components/Header/Header";
 import useStyles from "./LibraryScreen.styles";
-import Section from "../../components/Section/Section";
+import SectionWrapper from "../../components/Section/SectionWrapper";
 import { ScrollView } from "react-native-gesture-handler";
+import CollectionGrid from "./CollectionGrid/CollectionGrid";
 
 export default function LibraryScreen() {
   const styles = useStyles();
@@ -16,9 +17,21 @@ export default function LibraryScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        <Section height={256} title={"My Collection"} />
-        <Section height={136} title={"Wishlist"} />
-        <Section height={196} title={"Groups"} />
+        <SectionWrapper title={"My Collection"}>
+          <CollectionGrid />
+        </SectionWrapper>
+        <SectionWrapper title={"Wishlist"}>
+          <Image
+            source={{ uri: "https://picsum.photos/seed/gr${i}/200/200" }}
+            style={{ width: 78, height: 92 }}
+          />
+        </SectionWrapper>
+        <SectionWrapper title={"Groups"}>
+          <Image
+            source={{ uri: "https://picsum.photos/seed/gr${i}/200/200" }}
+            style={{ width: 100, height: 100 }}
+          />
+        </SectionWrapper>
       </ScrollView>
     </View>
   );
