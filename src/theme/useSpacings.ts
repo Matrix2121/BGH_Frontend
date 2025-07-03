@@ -55,10 +55,18 @@ export interface Spacings {
   };
   tiles: 
   {
-    games: 
-    { 
-      width: number; 
-      height: number 
+    section: 
+    {
+      games: 
+      { 
+        width: number;
+        height: number;
+      },
+      groups:
+      {
+        width: number;
+        height: number;
+      }
     };
     bottomNavigation: number;
   };
@@ -127,14 +135,23 @@ export function useSpacings(): Spacings {
         bottomNavigation: 24,
       },
 
-      tiles: {
-        games: 
+      tiles: 
+      {
+        section:
         {
-          width: width * 0.25,
-          height: width * 0.25 * (92 / 78), 
+          games: 
+          { 
+            width: 78,
+            height: 92,
+          },
+          groups:
+          {
+            width: 108,
+            height: 138,
+          }
         },
         bottomNavigation: 28,
-      },
+        },
     }),
     [width, height, insets.bottom, insets.left, insets.right]
   );

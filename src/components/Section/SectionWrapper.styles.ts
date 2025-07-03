@@ -20,6 +20,9 @@ export default function useStyles() {
     grid: {
       flex: 1,
       width: '100%',
+      overflow: 'hidden',
+      flexWrap: 'wrap',
+      
     },
   })
 };
