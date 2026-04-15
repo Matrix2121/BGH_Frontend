@@ -1,0 +1,74 @@
+# Project Context
+
+You are an expert React Native and Expo developer using TypeScript.
+This project is a React Native mobile application using Expo, React Navigation, and a strictly enforced custom theming system.
+
+# General Code Style & Architecture
+
+- Write strictly functional components using React Hooks. Never use class components.
+- Use TypeScript for all files (`.ts` or `.tsx`). Strongly type interfaces and component props.
+- Keep components modular. Separate logic, UI, and styles into dedicated files where appropriate.
+- When creating platform-specific UI (like blurs or shadows), utilize platform extensions (e.g., `.android.tsx`, `.ios.tsx`, `.web.tsx`).
+
+# Architectural Patterns
+
+- **Dashboards:** Each main tab (Library, Events, Home, Groups, Profile) functions as a dashboard. They should present a simple list/grid of everything belonging to that category.
+- **Navigation State:**
+  - **Collapsed (Default):** Shows Library, Events, Home (with an upward chevron indicating more), Groups, Profile.
+  - **Expanded:** Shows Marketplace, Forums, Nearby, Guidebook, Settings.
+- **Contextual FAB (Floating Action Button):** The FAB is screen-local and contextual. Do not build a global FAB.
+  - Library: Add new game (+ icon)
+  - Home: Log play session (Pencil/Log icon)
+  - Groups: Create group/Invite (Users + icon)
+  - Events: Plan event (Calendar + icon)
+  - Marketplace: Sell game (Tag/Sell icon)
+
+# Design System & Theming (CRITICAL)
+
+**Never use hardcoded colors, spacing, or typography values in components.** All styling must be derived from the custom theme engine (`src/theme/`) accessed via the `useTheme` hook.
+
+When generating or updating the theme files, strictly adhere to the following design tokens:
+
+### 1. Colors & Modes
+
+- **Mode:** Dark mode by default (Light mode supported, NO black and white).
+- **Backgrounds:**
+  - App Background: `#0B132B` (Oxford Blue)
+  - Card/Surface Background: `#1C2541` (Space Cadet)
+  - Nav Background: `#1C2541CC` (Space Cadet 80% opacity for blur)
+- **Text & Interface:**
+  - Primary / Page Titles / Active Nav: `#6FFFE9` (Fluorescent Cyan)
+  - Section Headers (Alt): `#D6FFF9` (Mint Green)
+  - Muted Text / Inactive Nav: `#5BC0BE` (Verdigris)
+
+### 2. Typography
+
+- **Page Title:** Poppins Bold (700) | 24px | Line Height: 28.8px | Letter Spacing: 0.2px
+- **Section Title:** Poppins Semibold (600) | 18px | Line Height: 23.4px | Letter Spacing: 0.2px
+- **Game Tile Label:** Inter Medium (500) | 14px | Line Height: 18.2px | Letter Spacing: 0.2px
+- **Group Label:** Inter Medium (500) | 13px | Line Height: 15.6px
+- **Nav Label:** Inter Semibold (600) | 11px | Line Height: 13.2px | Letter Spacing: 0.5px | Uppercase
+
+### 3. Spacing & Layout
+
+- **Global Constraints:** 16px horizontal padding.
+- **Safe Areas:** Top 52px, Bottom 24px buffer.
+- **Vertical Rhythm:** - Title to First Section: 16px
+  - Section to Section gap: 24px
+  - Grid Gaps: 12px (horizontal and vertical)
+- **Corners / Border Radius:** - Sections/Containers: 12px
+  - Content Tiles: 8px
+
+### 4. Effects & Layers
+
+- **Shadows/Glows:** Primary glow uses `rgba(111, 255, 233, 0.25)`. Neon shadow uses `0 0 12px rgba(111, 255, 233, 0.3)`.
+- **Gradients:** Use linear-gradient where applicable (`145deg, #1C2541 40%, #2E3B61 100%`).
+- **Blur:** Bottom navigation uses a Frosted Glass effect + soft shadow. Use the custom wrapper in `src/components/BlurView/`.
+
+# Component Styling Rules
+
+- Follow the established `useStyles` pattern for component styling:
+  1. Create a `.styles.ts` or `.styles.tsx` file alongside the component.
+  2. Export a default function `useStyles()` that calls `const theme = useTheme();`.
+  3. Return `StyleSheet.create({ ... })` utilizing the `theme` object.
+  4. In the component, call `const styles = useStyles();` and apply `styles.className`.
