@@ -7,14 +7,13 @@ export default function useStyles() {
   return StyleSheet.create({
     innerContainer: {
       borderRadius: theme.spacings.borderRadius.section,
-      backgroundColor: theme.colors.background.card,
+      backgroundColor: theme.colors.background.surface,
       padding: theme.spacings.paddings.section.contentToBorder ,
       overflow: 'hidden',
     },
     title: {
       ...theme.typography.sectionTitle,
-      color: theme.colors.text.secondary,
-      fontSize: 20,
+      color: theme.colors.text.sectionHeader,
       marginBottom: theme.spacings.margins.section.titleToContent
     },
   })

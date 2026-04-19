@@ -67,7 +67,7 @@ export default function useStyles() {
     blurPill: {
       width: "100%",
       height: "100%",
-      backgroundColor: theme.colors.navBar.background,
+      backgroundColor: theme.colors.background.nav,
     },
   })
 };

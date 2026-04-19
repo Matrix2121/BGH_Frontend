@@ -3,6 +3,7 @@ import { View, Text, Image } from "react-native";
 import useStyles from "./SectionWrapper.styles";
 import { Shadow } from "react-native-shadow-2";
 import { ScrollView } from "react-native-gesture-handler";
+import { useTheme } from "../../context/ThemeContext";
 
 export interface SectionWrapperProps {
   // height?: any;
@@ -18,10 +19,15 @@ export default function SectionWrapper({
   children,
 }: SectionWrapperProps) {
   const styles = useStyles();
+  const theme = useTheme();
 
   return (
     <View style={{ width: width }}>
-      <Shadow distance={12} startColor={"#00FFE933"} stretch={true}>
+      <Shadow
+        distance={12}
+        startColor={theme.colors.effects.primaryGlow}
+        stretch={true}
+      >
         <View style={[styles.innerContainer, { width: "100%" }]}>
           <Text style={styles.title}>{title}</Text>
           {children}

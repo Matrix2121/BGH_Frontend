@@ -1,65 +1,62 @@
 import React, { useMemo } from "react";
 import { FlatList, Pressable, Text, View } from "react-native";
-import { Plus } from "lucide-react-native";
+import { Pencil } from "lucide-react-native";
 import { Shadow } from "react-native-shadow-2";
 
 import ScreenHeader from "../../components/Header/Header";
 import SectionWrapper from "../../components/Section/SectionWrapper";
-import CollectionGrid from "./CollectionGrid/CollectionGrid";
 import { useTheme } from "../../context/ThemeContext";
-import useStyles from "./LibraryScreen.styles";
+import { useAppNavigation } from "../../navigation/types";
+import useStyles from "./HomeScreen.styles";
 
 type PlaceholderItem = { id: string; title: string };
 
-export default function LibraryScreen() {
+export default function HomeScreen() {
   const theme = useTheme();
   const styles = useStyles();
+  const navigation = useAppNavigation();
 
   const data = useMemo<PlaceholderItem[]>(
     () => [
-      { id: "collection", title: "My Collection" },
-      { id: "wishlist", title: "Wishlist" },
-      { id: "groups", title: "Group collections (placeholder)" },
+      { id: "recent", title: "Recent activity (placeholder)" },
+      { id: "stats", title: "Stats snapshot (placeholder)" },
+      { id: "suggestions", title: "Suggestions (placeholder)" },
     ],
     []
   );
 
   return (
     <View style={styles.container}>
-      <ScreenHeader title="Library" />
+      <ScreenHeader title="Home" />
 
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.listContent}
-        renderItem={({ item }) => {
-          if (item.id === "collection") {
-            return (
-              <SectionWrapper title={item.title}>
-                <CollectionGrid />
-              </SectionWrapper>
-            );
-          }
-          return (
-            <SectionWrapper title={item.title}>
+        renderItem={({ item }) => (
+          <SectionWrapper title={item.title}>
+            <Pressable
+              onPress={() =>
+                navigation.navigate("GameDetailsModal", { gameId: "test-game-123" })
+              }
+              style={styles.modalTrigger}
+            >
               <Text style={styles.placeholderText}>
-                Themed dashboard section content goes here.
+                Tap to open GameDetailsModal (proof-of-life).
               </Text>
-            </SectionWrapper>
-          );
-        }}
+            </Pressable>
+          </SectionWrapper>
+        )}
       />
 
       <View style={styles.fabContainer} pointerEvents="box-none">
         <Shadow distance={12} startColor={theme.colors.effects.primaryGlow}>
           <Pressable style={styles.fabButton} onPress={() => {}}>
-            <Plus
-              size={theme.spacings.tiles.bottomNavigation}
-              color={theme.colors.background.app}
-            />
+            <Pencil size={theme.spacings.tiles.bottomNavigation} color={theme.colors.background.app} />
           </Pressable>
         </Shadow>
       </View>
     </View>
   );
 }
+

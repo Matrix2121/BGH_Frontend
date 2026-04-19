@@ -22,21 +22,16 @@ export default function useStyles() {
       ...theme.typography.gameTileLabel,
       color: theme.colors.text.muted,
     },
-    fabContainer: {
-      position: "absolute",
-      right: theme.spacings.fab.inset,
-      bottom:
-        theme.spacings.bottomNavigation.height +
-        theme.spacings.safeArea.bottom +
-        theme.spacings.fab.inset,
+    themeToggleButton: {
+      backgroundColor: theme.colors.background.surface,
+      borderRadius: theme.spacings.borderRadius.tiles,
+      paddingVertical: theme.spacings.gaps.grid,
+      paddingHorizontal: theme.spacings.paddings.section.contentToBorder,
     },
-    fabButton: {
-      width: theme.spacings.fab.size,
-      height: theme.spacings.fab.size,
-      borderRadius: theme.spacings.fab.radius,
-      backgroundColor: theme.colors.text.primary,
-      alignItems: "center",
-      justifyContent: "center",
+    themeToggleLabel: {
+      ...theme.typography.groupLabel,
+      color: theme.colors.accent.primary,
     },
   });
 }
+

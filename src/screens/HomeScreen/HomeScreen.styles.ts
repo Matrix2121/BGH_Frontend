@@ -22,6 +22,9 @@ export default function useStyles() {
       ...theme.typography.gameTileLabel,
       color: theme.colors.text.muted,
     },
+    modalTrigger: {
+      paddingVertical: theme.spacings.gaps.grid,
+    },
     fabContainer: {
       position: "absolute",
       right: theme.spacings.fab.inset,
@@ -40,3 +43,4 @@ export default function useStyles() {
     },
   });
 }
+

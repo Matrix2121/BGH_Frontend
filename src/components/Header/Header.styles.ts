@@ -14,16 +14,15 @@ export default function useStyles() {
       marginHorizontal: theme.spacings.margins.global.horizontal,
     },
     backButton: {
-      marginRight: 8,
+      marginRight: theme.spacings.gaps.grid,
     },
     title: {
       ...theme.typography.pageTitle,
-      fontSize: 24,
       flex: 1,
       color: theme.colors.text.primary,
     },
     chevron: {
-      color: theme.colors.accent.primary,
+      color: theme.colors.text.primary,
     },
   })
 };

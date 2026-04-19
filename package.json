@@ -9,6 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/inter": "^0.4.2",
+    "@expo-google-fonts/poppins": "^0.4.1",
     "@expo/metro-runtime": "~5.0.4",
     "@react-native-community/blur": "^4.4.1",
     "@react-native-masked-view/masked-view": "0.3.2",

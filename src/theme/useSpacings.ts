@@ -15,6 +15,10 @@ export interface Spacings {
     left: number;
     right: number;
   };
+  safeAreaBuffers: {
+    top: number;
+    bottom: number;
+  };
   bottomNavigation: 
   { 
     height: number
@@ -30,6 +34,9 @@ export interface Spacings {
     { 
       contentToBorder: number 
     };
+    screen: {
+      horizontal: number;
+    };
   };
   margins: 
   { 
@@ -40,17 +47,18 @@ export interface Spacings {
     section: 
     { 
       titleToContent: number 
-    } 
+    },
+    titleToFirstSection: number;
   };
   gaps: 
   { 
-    sectionToSection: number; 
-    gameTileToGameTile: number 
+    sectionToSection: number;
+    grid: number;
   };
   borderRadius: 
   {
     section: number;
-    gameTiles: number;
+    tiles: number;
     bottomNavigation: number;
   };
   tiles: 
@@ -70,6 +78,11 @@ export interface Spacings {
     };
     bottomNavigation: number;
   };
+  fab: {
+    size: number;
+    radius: number;
+    inset: number;
+  };
 }
 
 export function useSpacings(): Spacings {
@@ -86,15 +99,19 @@ export function useSpacings(): Spacings {
 
       safeArea: 
       {
-        top: insets.top,
-        bottom: insets.bottom,
+        top: Math.max(insets.top, 52),
+        bottom: Math.max(insets.bottom, 24),
         left: insets.left,
         right: insets.right,
+      },
+      safeAreaBuffers: {
+        top: 52,
+        bottom: 24,
       },
 
       bottomNavigation: 
       {
-        height: 72,
+        height: 60, //was 72
       },
 
       paddings: 
@@ -102,37 +119,41 @@ export function useSpacings(): Spacings {
         header: 
         { 
           vertical: 12, 
-          horizontal: 8 
+          horizontal: 16,
         },
         section: 
           {
            contentToBorder: 16 
           },
+        screen: {
+          horizontal: 16,
+        },
       },
 
       margins: 
       {
         global: 
         {
-          horizontal: 8,
+          horizontal: 16,
         },
         section: 
         { 
           titleToContent: 12 
-        } 
+        },
+        titleToFirstSection: 606, //was 16
       },
 
       gaps: 
       { 
-        sectionToSection: 24, 
-        gameTileToGameTile: 8 
+        sectionToSection: 24,
+        grid: 12,
       },
 
       borderRadius: 
       {
         section: 12,
-        gameTiles: 12,
-        bottomNavigation: 24,
+        tiles: 8,
+        bottomNavigation: 30,
       },
 
       tiles: 
@@ -150,8 +171,17 @@ export function useSpacings(): Spacings {
             height: 138,
           }
         },
-        bottomNavigation: 28,
+        bottomNavigation: 24, //was 28
         },
+      fab: {
+        size: 56,
+        radius: 28,
+        inset: 16,
+      },
+      activeTab: {
+        padding: 10,
+        radius: 24,
+      },
     }),
     [width, height, insets.bottom, insets.left, insets.right]
   );

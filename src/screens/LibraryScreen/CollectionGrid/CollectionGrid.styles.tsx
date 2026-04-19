@@ -6,15 +6,15 @@ export default function useStyles() {
 
   return StyleSheet.create({
     list: {
-      gap: theme.spacings.gaps.gameTileToGameTile,
+      gap: theme.spacings.gaps.grid,
     },
     item: { 
-        gap: theme.spacings.gaps.gameTileToGameTile 
+        gap: theme.spacings.gaps.grid 
     },
     tile: { 
         width: theme.spacings.tiles.section.games.width, 
         height: theme.spacings.tiles.section.games.height, 
-        borderRadius: theme.spacings.borderRadius.gameTiles
+        borderRadius: theme.spacings.borderRadius.tiles
     },
   });
 }

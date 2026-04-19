@@ -1,59 +1,49 @@
 import React, { useMemo } from "react";
 import { FlatList, Pressable, Text, View } from "react-native";
-import { Plus } from "lucide-react-native";
+import { UserPlus } from "lucide-react-native";
 import { Shadow } from "react-native-shadow-2";
 
 import ScreenHeader from "../../components/Header/Header";
 import SectionWrapper from "../../components/Section/SectionWrapper";
-import CollectionGrid from "./CollectionGrid/CollectionGrid";
 import { useTheme } from "../../context/ThemeContext";
-import useStyles from "./LibraryScreen.styles";
+import useStyles from "./GroupsScreen.styles";
 
 type PlaceholderItem = { id: string; title: string };
 
-export default function LibraryScreen() {
+export default function GroupsScreen() {
   const theme = useTheme();
   const styles = useStyles();
 
   const data = useMemo<PlaceholderItem[]>(
     () => [
-      { id: "collection", title: "My Collection" },
-      { id: "wishlist", title: "Wishlist" },
-      { id: "groups", title: "Group collections (placeholder)" },
+      { id: "my-groups", title: "My groups (placeholder)" },
+      { id: "invites", title: "Invites (placeholder)" },
+      { id: "discover", title: "Discover groups (placeholder)" },
     ],
     []
   );
 
   return (
     <View style={styles.container}>
-      <ScreenHeader title="Library" />
+      <ScreenHeader title="Groups" />
 
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.listContent}
-        renderItem={({ item }) => {
-          if (item.id === "collection") {
-            return (
-              <SectionWrapper title={item.title}>
-                <CollectionGrid />
-              </SectionWrapper>
-            );
-          }
-          return (
-            <SectionWrapper title={item.title}>
-              <Text style={styles.placeholderText}>
-                Themed dashboard section content goes here.
-              </Text>
-            </SectionWrapper>
-          );
-        }}
+        renderItem={({ item }) => (
+          <SectionWrapper title={item.title}>
+            <Text style={styles.placeholderText}>
+              Themed dashboard section content goes here.
+            </Text>
+          </SectionWrapper>
+        )}
       />
 
       <View style={styles.fabContainer} pointerEvents="box-none">
         <Shadow distance={12} startColor={theme.colors.effects.primaryGlow}>
           <Pressable style={styles.fabButton} onPress={() => {}}>
-            <Plus
+            <UserPlus
               size={theme.spacings.tiles.bottomNavigation}
               color={theme.colors.background.app}
             />
@@ -63,3 +53,4 @@ export default function LibraryScreen() {
     </View>
   );
 }
+

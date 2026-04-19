@@ -21,7 +21,6 @@ export default function useStyles() {
       alignItems: "center",
       borderRadius: theme.spacings.borderRadius.bottomNavigation,
       overflow: "hidden",
-      // backgroundColor: 'red'
     },
     tabButton: {
       height: '100%',
@@ -30,9 +29,9 @@ export default function useStyles() {
       justifyContent: "center",
     },
     focusedIconWrapper: {
-      backgroundColor: theme.colors.accent.primary,
-      borderRadius: 50,
-      padding: 10,
+      backgroundColor: theme.colors.text.primary,
+      borderRadius: theme.spacings.activeTab.radius,
+      padding: theme.spacings.activeTab.padding,
       justifyContent: 'center',
       alignItems: 'center',
     },

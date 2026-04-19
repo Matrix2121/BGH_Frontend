@@ -35,7 +35,7 @@ export default function NavigationBar(props: BottomTabBarProps) {
 
           const baseColor = isFocused
             ? theme.colors.background.app
-            : theme.colors.accent.secondary;
+            : theme.colors.text.muted;
 
           const Icon =
             typeof options.tabBarIcon === "function" ? (
