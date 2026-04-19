@@ -8,6 +8,7 @@ import EventsStack from "./EventsStack";
 import GroupsStack from "./GroupsStack";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen/ProfileScreen";
+import PlaceholderScreen from "../screens/PlaceholderScreen/PlaceholderScreen";
 import NavigationBar from "./NavigationBar/NavigationBar";
 import type { MainTabParamList } from "./types";
 
@@ -55,6 +56,13 @@ export default function MainTabs() {
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ size, color }) => <User size={size} color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Placeholder"
+        component={PlaceholderScreen}
+        options={{
+          tabBarButton: () => null,
         }}
       />
     </Tab.Navigator>

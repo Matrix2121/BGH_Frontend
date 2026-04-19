@@ -11,8 +11,7 @@ const SvgHandle = (props) => (
   >
     <ForeignObject width={96} height={47} x={-16} y={-16}></ForeignObject>
     <Path
-      // fill="#1C2339"
-      // fillOpacity={0.8}
+      fill={props.fill ?? "#000000"}
       d="M32 0C19.75 0 15.313 15 0 15h64C48.688 15 44.25 0 32 0"
       // data-figma-bg-blur-radius={16}
     />

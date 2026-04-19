@@ -83,6 +83,10 @@ export interface Spacings {
     radius: number;
     inset: number;
   };
+  activeTab: {
+    padding: number;
+    radius: number;
+  };
 }
 
 export function useSpacings(): Spacings {

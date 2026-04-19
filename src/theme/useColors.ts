@@ -9,6 +9,8 @@ export interface ThemeColors {
     app: string;
     surface: string;
     nav: string;
+    /** Semi-transparent tint over nav blur (frosted glass). */
+    navBlurTint: string;
   };
   accent: {
     primary: string;
@@ -32,7 +34,8 @@ const DARK: Omit<ThemeColors, "mode" | "accent"> = {
   background: {
     app: "#0B132B", // Oxford Blue
     surface: "#1C2541", // Space Cadet
-    nav: "#1C254177", // Space Cadet @ 80% for blur , was CC
+    nav: "#1C2541CC", // Space Cadet @ 80% for blur , was CC
+    navBlurTint: "rgba(28, 37, 65, 0.3)",
   },
   text: {
     primary: "#6FFFE9", // Fluorescent Cyan
@@ -52,6 +55,7 @@ const LIGHT: Omit<ThemeColors, "mode" | "accent"> = {
     app: "#F4F7FB",
     surface: "#E2E8F0",
     nav: "rgba(226, 232, 240, 0.8)",
+    navBlurTint: "rgba(226, 232, 240, 0.35)",
   },
   text: {
     primary: "#0B132B", // reuse dark background as text for contrast

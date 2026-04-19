@@ -18,6 +18,8 @@ export type MainTabParamList = {
   Home: undefined;
   Groups: undefined;
   Profile: undefined;
+  /** Hidden route used for expanded-menu shortcuts. */
+  Placeholder: undefined;
 };
 
 export type LibraryStackParamList = {
